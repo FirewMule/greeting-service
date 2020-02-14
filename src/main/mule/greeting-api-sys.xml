@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b4505928-d7ee-4cbd-b4ff-b003410be8f3" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="greeting-api-sysFlow" doc:id="e432d0ff-3e72-4a74-bee7-34fcd5066a63" >
+		<http:listener doc:name="Listener" doc:id="e328ce08-d8fd-47c2-8094-6b5a37c73d8e" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="'Hi Batch13 this is CI CD'" doc:name="Set Payload" doc:id="c378e96e-f2b2-43e1-beba-a3670c6dd1f8" />
+	</flow>
+</mule>
